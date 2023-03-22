@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -50,18 +47,22 @@ public class ClasificacionDto {
 
         }
         else {log.info("NO HAY Equipos");}
-
-
-
-
-
-
-
-
-
     }
-
     public void mostrarClasificacion(){
+
+        if( !this.clasificacion.isEmpty() && this.clasificacion != null){
+
+            Iterator it = this.clasificacion.keySet().iterator();// para iterar las keys
+
+            while (it.hasNext()){
+
+                Integer key = (Integer) it.next();
+                EquipoDto equipo = this.clasificacion.get(key);
+                System.out.println("Clasificacion: \n");
+                System.out.println(" Equipo: "+ equipo.getNombre());
+                System.out.println(" Puesto: "+ key);
+            }
+        }
 
     }
 
