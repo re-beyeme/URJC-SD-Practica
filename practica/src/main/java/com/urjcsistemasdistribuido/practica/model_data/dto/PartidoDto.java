@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.urjcsistemasdistribuido.practica.utils_const_enum.ResultadoDto;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 @Setter
 @Getter
@@ -12,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class PartidoDto {
+public class PartidoDto implements Comparable {
 
     @JsonProperty("equipos_visitante")
     private EquipoDto equipoVisitante;
@@ -21,7 +22,7 @@ public class PartidoDto {
     private EquipoDto equipoLocal;
 
     @JsonProperty("horarior")
-    private Date horario;
+    private LocalDateTime horario;
 
     @JsonProperty("resultado")
     private ResultadoDto resultado;
@@ -35,8 +36,24 @@ public class PartidoDto {
     @JsonProperty("arbitro_asistente_derecho")
     private PersonaDto arbitroAsistenteDcho;
 
-    public void jugar(){
+    public void jugar() {
 
     }
 
+    @Override
+    public int compareTo(Object object) {
+
+        int compara = 0;
+
+        PartidoDto aux = (PartidoDto) object;
+
+        if ((this.getEquipoLocal().getNombre() == aux.getEquipoLocal().getNombre()) &&
+                (this.getEquipoVisitante().getNombre() == aux.getEquipoVisitante().getNombre())) {
+            compara = 1;
+            return compara;
+        }
+        else { return compara; }
+
+
+    }
 }

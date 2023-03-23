@@ -27,6 +27,8 @@ public final class ConstUtils {
 
     public static final double MAX_VALOR = 10.0;
 
+    public static final int NUMERO_DE_EQUIPOS = 4;
+
 
 
 
