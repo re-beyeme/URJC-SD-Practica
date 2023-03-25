@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class PartidoDto implements Comparable {
+public class Partido implements Comparable {
 
     @JsonProperty("equipos_visitante")
-    private EquipoDto equipoVisitante;
+    private Equipo equipoVisitante;
 
     @JsonProperty("equipo_local")
-    private EquipoDto equipoLocal;
+    private Equipo equipoLocal;
 
     @JsonProperty("horarior")
     private LocalDateTime horario;
@@ -32,13 +32,13 @@ public class PartidoDto implements Comparable {
 
 
     @JsonProperty("arbitro_central")
-    private PersonaDto arbitroCentral;
+    private Persona arbitroCentral;
 
     @JsonProperty("arbitro_asistente_izquierdo")
-    private PersonaDto arbitroAsistenteIzdo;
+    private Persona arbitroAsistenteIzdo;
 
     @JsonProperty("arbitro_asistente_derecho")
-    private PersonaDto arbitroAsistenteDcho;
+    private Persona arbitroAsistenteDcho;
 
     public void jugar() {
 
@@ -49,7 +49,7 @@ public class PartidoDto implements Comparable {
 
         int compara = 0;
 
-        PartidoDto aux = (PartidoDto) object;
+        Partido aux = (Partido) object;
 
         if ((this.getEquipoLocal().getNombre() == aux.getEquipoLocal().getNombre()) &&
                 (this.getEquipoVisitante().getNombre() == aux.getEquipoVisitante().getNombre())) {

@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class PersonaDto {
+public class Persona {
 
     @JsonProperty("nombre")
     private String nombre;

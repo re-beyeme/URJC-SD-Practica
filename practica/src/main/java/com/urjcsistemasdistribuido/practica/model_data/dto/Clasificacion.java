@@ -14,26 +14,26 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ClasificacionDto {
+public class Clasificacion {
 
-    private Logger log = (Logger) LoggerFactory.getLogger(ClasificacionDto.class);
+    private Logger log = (Logger) LoggerFactory.getLogger(Clasificacion.class);
 
     @JsonProperty("temporada")
     private String temporada;
 
     @JsonProperty("clasificacion")
-    private Map<Integer,EquipoDto> clasificacion;
+    private Map<Integer, Equipo> clasificacion;
 
     /**
      *
      * @param equipos lista de equipos, segun clasificacion
      *
      */
-    public void actualizarClasificacion(List<EquipoDto> equipos){
+    public void actualizarClasificacion(List<Equipo> equipos){
 
-        List<EquipoDto> listaEquipos;
+        List<Equipo> listaEquipos;
 
-        final Map<Integer, EquipoDto> hashMap = new HashMap<Integer, EquipoDto>();
+        final Map<Integer, Equipo> hashMap = new HashMap<Integer, Equipo>();
 
         if(! equipos.isEmpty() && equipos != null){
 
@@ -41,7 +41,7 @@ public class ClasificacionDto {
                    equipos.stream()
                            .sorted().collect(Collectors.toList()));
 
-           for (EquipoDto e:listaEquipos){
+           for (Equipo e:listaEquipos){
                this.clasificacion.put(e.getPuntos(),e);
            }
 
@@ -57,7 +57,7 @@ public class ClasificacionDto {
             while (it.hasNext()){
 
                 Integer key = (Integer) it.next();
-                EquipoDto equipo = this.clasificacion.get(key);
+                Equipo equipo = this.clasificacion.get(key);
                 System.out.println("Clasificacion: \n");
                 System.out.println(" Equipo: "+ equipo.getNombre());
                 System.out.println(" Puesto: "+ key);

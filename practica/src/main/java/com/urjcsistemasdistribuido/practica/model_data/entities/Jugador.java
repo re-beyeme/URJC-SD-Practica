@@ -1,6 +1,6 @@
 package com.urjcsistemasdistribuido.practica.model_data.entities;
 
-import com.urjcsistemasdistribuido.practica.model_data.dto.EquipoDto;
+import com.urjcsistemasdistribuido.practica.model_data.dto.Equipo;
 import com.urjcsistemasdistribuido.practica.utils_const_enum.Demarcacion;
 import jakarta.persistence.*;
 import lombok.*;
@@ -33,7 +33,7 @@ public class Jugador {
     private int valoracion;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private EquipoDto equipo;
+    private Equipo equipo;
 
 
 

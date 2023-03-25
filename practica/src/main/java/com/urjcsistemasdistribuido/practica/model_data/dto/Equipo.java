@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EquipoDto implements Comparable{
+public class Equipo implements Comparable{
 
     @JsonProperty("nombre")
     private String nombre;
@@ -41,45 +41,45 @@ public class EquipoDto implements Comparable{
     private int puntos;
 
     @JsonProperty("clasificacion")
-    private ClasificacionDto clasificacionDto;
+    private Clasificacion clasificacionDto;
 
     @JsonProperty("mercado")
-    private MercadoDto mercado;
+    private Mercado mercado;
 
     @JsonProperty("directivo")
-    private DirectivoDto directivo;
+    private Directivo directivo;
 
     @JsonProperty("jugador")
-    private JugadorDto jugador;
+    private Jugador jugador;
 
     @JsonProperty("jugadores")
-    private List<JugadorDto> jugadores;
+    private List<Jugador> jugadores;
 
     @JsonProperty("partido")
-    private PartidoDto partido;
+    private Partido partido;
 
 
-    public void fichar(JugadorDto jugador){
-
-    }
-
-    public void fichar(JugadorDto j, EquipoDto e, double precio){
+    public void fichar(Jugador jugador){
 
     }
 
-    public void fichar(List<JugadorDto> jugadores,EquipoDto e, JugadorDto j){
+    public void fichar(Jugador j, Equipo e, double precio){
 
     }
 
-    public void descartarJugador(JugadorDto j){
+    public void fichar(List<Jugador> jugadores, Equipo e, Jugador j){
 
     }
 
-    public void venderJugador(JugadorDto jugador){
+    public void descartarJugador(Jugador j){
 
     }
 
-    public void cederJugador(JugadorDto j){
+    public void venderJugador(Jugador jugador){
+
+    }
+
+    public void cederJugador(Jugador j){
 
     }
 

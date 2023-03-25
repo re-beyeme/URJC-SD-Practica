@@ -11,7 +11,7 @@ import static com.urjcsistemasdistribuido.practica.utils_const_enum.ConstUtils.*
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class PorteroDto extends JugadorDto {
+public class Portero extends Jugador {
 
     @JsonProperty("salida")
     private double salida;
@@ -84,11 +84,11 @@ public class PorteroDto extends JugadorDto {
 
         int compara =0;
 
-        PorteroDto portero = (PorteroDto) objeto;
+        Portero portero = (Portero) objeto;
 
-        if (calcularValoracionGlobal() > ((PorteroDto) objeto).calcularValoracionGlobal()) {  compara = 1; }
+        if (calcularValoracionGlobal() > ((Portero) objeto).calcularValoracionGlobal()) {  compara = 1; }
 
-        if(calcularValoracionGlobal() < ((PorteroDto) objeto).calcularValoracionGlobal()){ compara = -1; }
+        if(calcularValoracionGlobal() < ((Portero) objeto).calcularValoracionGlobal()){ compara = -1; }
 
         return compara;
     }

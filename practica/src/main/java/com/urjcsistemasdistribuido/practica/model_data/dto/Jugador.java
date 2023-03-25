@@ -13,7 +13,7 @@ import static com.urjcsistemasdistribuido.practica.utils_const_enum.ConstUtils.M
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public abstract class JugadorDto extends PersonaDto implements Comparable {
+public abstract class Jugador extends Persona implements Comparable {
 
     @JsonProperty("nombre_deportivo")
     private String nombreDeportivo;
@@ -31,7 +31,7 @@ public abstract class JugadorDto extends PersonaDto implements Comparable {
     private double valoracion;
 
     @JsonProperty("equipo")
-    private EquipoDto equipo;
+    private Equipo equipo;
 
     public void setColocacion(double colocacion) {
 

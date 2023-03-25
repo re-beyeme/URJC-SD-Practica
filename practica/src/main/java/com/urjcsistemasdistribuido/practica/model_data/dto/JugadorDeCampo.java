@@ -12,7 +12,7 @@ import static com.urjcsistemasdistribuido.practica.utils_const_enum.ConstUtils.M
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class JugadorDeCampoDto extends JugadorDto{
+public class JugadorDeCampo extends Jugador {
 
     @JsonProperty("velocidad")
     private double velocidad;
@@ -83,11 +83,11 @@ public class JugadorDeCampoDto extends JugadorDto{
     public int compareTo(Object objeto) {
         int compara =0;
 
-        PorteroDto portero = (PorteroDto) objeto;
+        Portero portero = (Portero) objeto;
 
-        if (calcularValoracionGlobal() > ((PorteroDto) objeto).calcularValoracionGlobal()) {  compara = 1; }
+        if (calcularValoracionGlobal() > ((Portero) objeto).calcularValoracionGlobal()) {  compara = 1; }
 
-        if(calcularValoracionGlobal() < ((PorteroDto) objeto).calcularValoracionGlobal()){ compara = -1; }
+        if(calcularValoracionGlobal() < ((Portero) objeto).calcularValoracionGlobal()){ compara = -1; }
 
         return compara;
     }

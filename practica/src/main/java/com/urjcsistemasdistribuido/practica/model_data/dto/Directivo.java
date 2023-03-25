@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class DirectivoDto extends PersonaDto{
+public class Directivo extends Persona {
 
     @JsonProperty("cargo")
     private String cargo;

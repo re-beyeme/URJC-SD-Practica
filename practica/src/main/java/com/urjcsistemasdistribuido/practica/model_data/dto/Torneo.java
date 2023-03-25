@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class TorneoDto {
+public class Torneo {
 
     @JsonProperty("tipo_de_torneo")
     private String tipoDeTorneo;
@@ -23,10 +23,10 @@ public class TorneoDto {
     private String temporada;
 
     @JsonProperty("equipos_del-torneo")
-    private List<EquipoDto> equiposDelTorneo;
+    private List<Equipo> equiposDelTorneo;
 
     @JsonProperty("calendario")
-    private CalendarioDto calendario;
+    private Calendario calendario;
 
     public void disputar(){
 
