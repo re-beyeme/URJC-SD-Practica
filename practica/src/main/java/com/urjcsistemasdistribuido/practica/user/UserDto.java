@@ -15,7 +15,6 @@ public class UserDto {
 
     private String userName;
 
-    //@JsonIgnore and what is this?
     private String password;
 
     @ElementCollection(fetch= FetchType.EAGER)

@@ -24,8 +24,12 @@ public class PartidoDto implements Comparable {
     @JsonProperty("horarior")
     private LocalDateTime horario;
 
-    @JsonProperty("resultado")
-    private ResultadoDto resultado;
+    @JsonProperty("goles_local")
+    private int golesLocal;
+
+    @JsonProperty("goles_visitante")
+    private int golesVisitante;
+
 
     @JsonProperty("arbitro_central")
     private PersonaDto arbitroCentral;

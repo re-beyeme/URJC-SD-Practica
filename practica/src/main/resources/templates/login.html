@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="76x76"
+	href="../assets/img/apple-icon.png">
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Gestion de liga</title>
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+	name='viewport' />
+<base href="/" />
+<!--     Fonts and icons     -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<!-- CSS Files -->
+<link rel="stylesheet" href="css/material-dashboard.css"
+	id="bootstrap-css">
+<link rel="stylesheet" href="css/material-dashboard.css?v=2.1.1" />
+<link rel="stylesheet" href="css/css1.css" />
+<link rel="stylesheet" href="http://cdn.phpoll.com/css/animate.css" />
+</head>
+<body>
+	<div class="container-fluid border-container">
+		<div class="login-index-container">
+			<div class="card">
+				<div class="container-fluid">
+					<form action="/login" method="post" modelAttributes="user">
+						<div class="form-group">
+							<label for="name">User name</label>
+							<input type="text" name="name" id="name" tabindex="1"
+								class="form-control" placeholder="Usuario" value=""
+								autocomplete="off">
+						</div>
+
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password" tabindex="2"
+								class="form-control" placeholder="Contraseña" autocomplete="off">
+						</div>
+
+						<div class="form-group">
+							<div class="col-xs-5">
+								<input type="checkbox" tabindex="3" name="remember"
+									id="remember"> <label for="remember">Recordarme</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-5 pull-right">
+								<input type="submit" name="login-submit" id="login-submit"
+									tabindex="4" class="form-control btn btn-success"
+									value="Iniciar Sesión">
+							</div>
+						</div>
+
+						<input type="hidden" class="hide" name="token" id="token"
+							value="a465a2791ae0bae853cf4bf485dbe1b6">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{>footer}}

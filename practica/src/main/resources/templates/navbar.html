@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <title> Torne de Liga de Futbol </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lugares de interés que debe visitar en Guinea Ecuatorial" />
+    <meta name="keywords" content="Guinea Ecuatorial, Lugares, Interes, Actividad">
+    <meta name="author" content="Restituto Esono Bayeme Mbang" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/default2.css" />
+    <link rel="stylesheet" type="text/css" href="css/component2.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/imgPrincipal.css" />
+    <script type="text/javascript" src="js/menu.js"></script>
+    <!---strat-slider-->
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <!--//strat-slider-->
+    <!-- start top_js_button -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="js/toTop"></script>
+</head>
+
+<body>
+    <div class="wrapper ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse  justify-content-end">
+                    <ul class="nav navbar-nav">
+
+                        <!--Registro-->
+                        {{^logged}}
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Registrarse<span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-lr slideInRight" role="menu">
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <h3><b>Crear cuenta</b></h3>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <form id="ajax-register-form" action="/register" method="post">
+
+                                            <div class="form-group">
+                                                <input type="text" name="userName" id="regName" class="form-control"
+                                                       placeholder="Usuario">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="regPass"
+                                                       class="form-control" placeholder="Contraseña" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" tabindex="4" class="form-control btn btn-success"
+                                                               value="Registrarse">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <input type="hidden" name="_csrf" value="{{token}}" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        {{/logged}}
+                        <!--Log in-->
+                        {{^logged}}
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Iniciar
+                                Sesión
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-lr slideInRight" role="menu">
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <h3><b>Iniciar Sesión</b></h3>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <form id="ajax-login-form" action="/login" method="post">
+
+                                            <div class="form-group">
+                                                <input type="text" name="username" id="username" class="form-control"
+                                                    placeholder="Usuario">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control" placeholder="Contraseña" autocomplete="off">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-xs-5 pull-right">
+                                                        <input type="submit" tabindex="4" class="form-control btn btn-success"
+                                                            value="Iniciar Sesión">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <input type="hidden" name="_csrf" value="{{token}}" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        {{/logged}}
+                        {{#logged}}
+                        <li>
+                            {{username}}
+                        </li>
+                        <li>
+                            <span style="color:blue">/{{role}}</span>
+                        </li>
+                        <li>
+                            <form action="/logout" method="post">
+                                <button class="btn btn-default navbar-btn" type="submit">Log
+                                    Out</button>
+                                <input type="hidden" name="_csrf" value="{{token}}" />
+                            </form>
+                        </li>
+                        {{/logged}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
