@@ -1,7 +1,7 @@
 package com.urjcsistemasdistribuido.practica.security;
 
-import com.urjcsistemasdistribuido.practica.model_data.entities.User;
-import com.urjcsistemasdistribuido.practica.repository.user.UserRepository;
+import com.urjcsistemasdistribuido.practica.model_data.entities.UserEntity;
+import com.urjcsistemasdistribuido.practica.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -43,8 +43,8 @@ public class UserAuthProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
-        List<User> savedUsers = userRepo.findAll();
-        User user = userRepo.findByUserName(authentication.getName());
+        List<UserEntity> savedUsers = userRepo.findAll();
+        UserEntity user = userRepo.findByUserName(authentication.getName());
 
         if(user == null){
             throw new BadCredentialsException("User not found");

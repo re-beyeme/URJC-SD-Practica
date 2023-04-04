@@ -11,10 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Jugador {
+@Table(name = "jugador_entity")
+public class JugadorEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "jugador_id", nullable = false)
     private Long id;
 
     @Column(name = "nombre_deportivo")
@@ -32,10 +34,8 @@ public class Jugador {
     @Column(name = "valoracion")
     private int valoracion;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Equipo equipo;
-
-
+    @ManyToOne
+    private EquipoEntity equipo;
 
 
 

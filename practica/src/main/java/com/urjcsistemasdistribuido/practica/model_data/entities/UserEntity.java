@@ -6,20 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 
-@Entity
+
 @Getter
 @Setter@AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+@Entity
+@Table(name = "user")
+public class UserEntity implements Serializable {
 
-    private static final long serialVersionUID = 6049896503777265258L;
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id", nullable = false)
     private Long id;
 
     @Column(name = "user_name")

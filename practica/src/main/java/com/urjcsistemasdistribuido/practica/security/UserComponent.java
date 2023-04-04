@@ -1,19 +1,19 @@
 package com.urjcsistemasdistribuido.practica.security;
 
-import com.urjcsistemasdistribuido.practica.model_data.entities.User;
+import com.urjcsistemasdistribuido.practica.model_data.entities.UserEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
 @Component
 @SessionScope
 public class UserComponent {
-    private User user;
+    private UserEntity user;
 
-    public User getLoggedUser() {
+    public UserEntity getLoggedUser() {
         return user;
     }
 
-    public void setLoggedUser(User user) {
+    public void setLoggedUser(UserEntity user) {
         this.user = user;
     }
 

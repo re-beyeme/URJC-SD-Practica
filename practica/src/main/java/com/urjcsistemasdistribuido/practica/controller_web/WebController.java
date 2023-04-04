@@ -1,4 +1,4 @@
-package com.urjcsistemasdistribuido.practica.controller_web.user;
+package com.urjcsistemasdistribuido.practica.controller_web;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;

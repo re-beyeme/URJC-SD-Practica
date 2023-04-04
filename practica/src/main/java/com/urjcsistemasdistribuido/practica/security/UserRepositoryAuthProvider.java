@@ -1,16 +1,13 @@
 package com.urjcsistemasdistribuido.practica.security;
 
-import com.urjcsistemasdistribuido.practica.model_data.entities.User;
-import com.urjcsistemasdistribuido.practica.repository.user.UserRepository;
+import com.urjcsistemasdistribuido.practica.model_data.entities.UserEntity;
+import com.urjcsistemasdistribuido.practica.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -37,7 +34,7 @@ public class UserRepositoryAuthProvider  implements AuthenticationProvider {
         String username = authentication.getName();
         String password = (String) authentication.getCredentials();
 
-        User user = userRepository.findByUserName(username);
+        UserEntity user = userRepository.findByUserName(username);
 
         if (user == null) {
             throw new BadCredentialsException("User not found");

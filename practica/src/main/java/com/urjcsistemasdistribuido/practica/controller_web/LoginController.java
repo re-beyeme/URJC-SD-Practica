@@ -1,6 +1,6 @@
-package com.urjcsistemasdistribuido.practica.controller_web.user;
+package com.urjcsistemasdistribuido.practica.controller_web;
 
-import com.urjcsistemasdistribuido.practica.model_data.entities.User;
+import com.urjcsistemasdistribuido.practica.model_data.entities.UserEntity;
 import com.urjcsistemasdistribuido.practica.security.UserComponent;
 import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
@@ -20,13 +20,13 @@ public class LoginController {
     private UserComponent userComponent;
 
     @RequestMapping("/api/logIn")
-    public ResponseEntity<User> logIn() {
+    public ResponseEntity<UserEntity> logIn() {
 
         if (!userComponent.isLoggedUser()) {
             log.info("Not user logged");
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         } else {
-            User loggedUser = userComponent.getLoggedUser();
+            UserEntity loggedUser = userComponent.getLoggedUser();
             log.info("Logged as " + loggedUser.getUserName());
             return new ResponseEntity<>(loggedUser, HttpStatus.OK);
         }
