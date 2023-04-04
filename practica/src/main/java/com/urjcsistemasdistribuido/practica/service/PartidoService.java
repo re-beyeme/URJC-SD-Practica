@@ -1,5 +1,4 @@
 package com.urjcsistemasdistribuido.practica.service;
 
-public interface JugadorService {
-
+public interface PartidoService {
 }
