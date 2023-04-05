@@ -19,6 +19,21 @@ public class DirectivoEntity {
     @Column(name = "directivo_id")
     private Long id;
 
-    @Column(name ="cargo")
+    @Column(name = "cargo")
     private String cargo;
+
+    @Column(name = "nombre")
+    private String nombre;
+
+    @Column(name = "apellidos")
+    private String apellidos;
+
+    @Column(name = "edad")
+    private int edad;
+
+    @Column(name = "peso")
+    private double peso;
+
+    @Column(name = "altura")
+    private double altura;
 }

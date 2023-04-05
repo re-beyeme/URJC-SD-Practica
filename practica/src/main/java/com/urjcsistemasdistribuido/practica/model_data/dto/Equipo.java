@@ -2,6 +2,8 @@ package com.urjcsistemasdistribuido.practica.model_data.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -12,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class Equipo implements Comparable{
+
+    private Logger log = LoggerFactory.getLogger(Equipo.class);
 
     @JsonProperty("nombre")
     private String nombre;
@@ -57,35 +61,21 @@ public class Equipo implements Comparable{
 
     @JsonProperty("partido")
     private Partido partido;
-
-
-    public void fichar(Jugador jugador){
-
-    }
-
-    public void fichar(Jugador j, Equipo e, double precio){
-
-    }
-
-    public void fichar(List<Jugador> jugadores, Equipo e, Jugador j){
-
-    }
-
-    public void descartarJugador(Jugador j){
-
-    }
-
-    public void venderJugador(Jugador jugador){
-
-    }
-
-    public void cederJugador(Jugador j){
-
-    }
-
-
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Object object) {
+
+        int comp = 0;
+        if(object != null){
+
+            Equipo equipo = (Equipo) object;
+            if(this.puntos > equipo.getPuntos()){
+                comp = 1;
+            }
+            else { comp = -1; }
+
+            return comp;
+        }
+        return comp;
     }
+
 }

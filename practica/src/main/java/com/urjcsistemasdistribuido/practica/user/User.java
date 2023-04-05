@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @ToString
-public class UserDto {
+public class User {
 
     private String userName;
 

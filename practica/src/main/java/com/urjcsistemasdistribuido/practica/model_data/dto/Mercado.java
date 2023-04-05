@@ -13,18 +13,10 @@ import java.util.List;
 @ToString
 public class Mercado {
 
+    @JsonProperty("mercado")
+    private String mercadoInviernoVerano;
+
     @JsonProperty("jugadores")
     private List<Jugador> jugadores;
 
-    public void añadirJugador(Jugador jugador){
-
-    }
-
-    public void venderJugador(Jugador jugador){
-
-    }
-
-    public void cederJugador(Jugador jugador){
-
-    }
 }

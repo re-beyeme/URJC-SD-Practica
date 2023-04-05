@@ -1,7 +1,6 @@
 package com.urjcsistemasdistribuido.practica.model_data.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.urjcsistemasdistribuido.practica.utils_const_enum.ResultadoDto;
 import lombok.*;
 
 import java.time.LocalDateTime;

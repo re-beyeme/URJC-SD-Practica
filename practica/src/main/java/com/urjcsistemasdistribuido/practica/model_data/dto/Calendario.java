@@ -29,7 +29,9 @@ public class Calendario {
     /**
      * @param listaEquipos para generar jornadas de liga
      */
-    public void generarCalendarioLiga(List<Equipo> listaEquipos){
+    public void generarteCalendaryLeague(List<Equipo> listaEquipos){
+
+        calendarioDeLiga = new HashMap<>();
 
         int jornadasLocalesPorEquipo = 1;
 

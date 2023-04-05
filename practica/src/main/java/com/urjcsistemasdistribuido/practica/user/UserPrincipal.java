@@ -13,7 +13,7 @@ import java.util.Collection;
 @NoArgsConstructor
 public class UserPrincipal implements UserDetails {
 
-    private UserDto user;
+    private User user;
     /**
      * Returns the authorities granted to the user. Cannot return <code>null</code>.
      *
