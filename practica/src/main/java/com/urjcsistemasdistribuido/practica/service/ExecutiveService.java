@@ -4,7 +4,7 @@ import com.urjcsistemasdistribuido.practica.model_data.dto.Directivo;
 
 import java.util.List;
 
-public interface DirectivoService {
+public interface ExecutiveService {
 
 
     List<Directivo> getAllExecutive();

@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 import java.util.Optional;
 
-public interface EquipoService {
+public interface TeamsService {
 
     Page<Equipo> getAllTeams();
     Optional<Equipo> getOneTeamById(Long id);

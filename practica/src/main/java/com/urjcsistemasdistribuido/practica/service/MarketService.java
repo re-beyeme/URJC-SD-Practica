@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.Optional;
 
-public interface MercadoService {
+public interface MarketService {
 
     Page<Mercado> getAllMercado();
 

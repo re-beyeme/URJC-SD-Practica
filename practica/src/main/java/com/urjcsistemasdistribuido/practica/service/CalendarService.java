@@ -5,7 +5,7 @@ import com.urjcsistemasdistribuido.practica.model_data.dto.Equipo;
 
 import java.util.List;
 
-public interface CalendarioService {
+public interface CalendarService {
 
     List<Calendario> getAllCalendary();
 

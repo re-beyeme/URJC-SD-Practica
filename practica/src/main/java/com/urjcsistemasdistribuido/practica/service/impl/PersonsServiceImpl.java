@@ -1,19 +1,19 @@
 package com.urjcsistemasdistribuido.practica.service.impl;
 
-import com.urjcsistemasdistribuido.practica.model_data.dto.Jugador;
-import com.urjcsistemasdistribuido.practica.service.JugadorService;
+import com.urjcsistemasdistribuido.practica.model_data.dto.Persona;
+import com.urjcsistemasdistribuido.practica.service.PersonsService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class JugadorServiceImpl implements JugadorService {
+public class PersonsServiceImpl implements PersonsService {
     /**
      * @return
      */
     @Override
-    public Page<Jugador> getAllJugador() {
+    public Page<Persona> getAllPersona() {
         return null;
     }
 
@@ -22,7 +22,7 @@ public class JugadorServiceImpl implements JugadorService {
      * @return
      */
     @Override
-    public Optional<Jugador> getOneJugadorById(Long id) {
+    public Optional<Persona> getOnePersonaById(Long id) {
         return Optional.empty();
     }
 
@@ -31,25 +31,25 @@ public class JugadorServiceImpl implements JugadorService {
      * @return
      */
     @Override
-    public Optional<Jugador> getOneJugadorByName(String name) {
+    public Optional<Persona> getOnePersonaByName(String name) {
         return Optional.empty();
     }
 
     /**
-     * @param player
+     * @param persona
      */
     @Override
-    public void saveJugador(Jugador player) {
+    public void savePersona(Persona persona) {
 
     }
 
     /**
      * @param id
-     * @param player
+     * @param persona
      * @return
      */
     @Override
-    public Jugador modifyJugador(Long id, Jugador player) {
+    public Persona modifyPersona(Long id, Persona persona) {
         return null;
     }
 
@@ -57,7 +57,7 @@ public class JugadorServiceImpl implements JugadorService {
      * @param id
      */
     @Override
-    public void deleteOneJugadorById(Long id) {
+    public void deleteOnePersonaById(Long id) {
 
     }
 }

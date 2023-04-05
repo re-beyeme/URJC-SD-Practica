@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.Optional;
 
-public interface JugadorDeCampoService {
+public interface FieldPlayersService {
 
     Page<JugadorDeCampo> getAllSeccion();
     Optional<JugadorDeCampo> getOneJugadorDeCampoById(Long id);

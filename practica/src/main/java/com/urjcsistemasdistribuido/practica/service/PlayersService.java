@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.Optional;
 
-public interface JugadorService {
+public interface PlayersService {
     Page<Jugador> getAllJugador();
 
     Optional<Jugador> getOneJugadorById(Long id);

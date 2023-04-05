@@ -4,7 +4,7 @@ import com.urjcsistemasdistribuido.practica.model_data.dto.Clasificacion;
 
 import java.util.List;
 
-public interface ClasificacionService {
+public interface ClasificationService {
 
     List<Clasificacion> getAllsClassification();
     Clasificacion getClassificationById(Long id);

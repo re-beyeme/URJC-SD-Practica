@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.Optional;
 
-public interface PersonaService {
+public interface PersonsService {
 
     Page<Persona> getAllPersona();
 
