@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -21,8 +18,8 @@ import java.util.logging.Logger;
 public class CalendarServiceImpl implements CalendarService {
 
     private Logger log = (Logger) LoggerFactory.getLogger(CalendarServiceImpl.class);
-    private ConcurrentMap<AtomicLong, Calendario> calendary = new ConcurrentHashMap<>();
-    private AtomicLong nextId = new AtomicLong(1);
+    private ConcurrentMap<Long, Calendario> calendary = new ConcurrentHashMap<>();
+    private AtomicLong nextId = new AtomicLong(0) ;
     private Map<Integer, List<Partido>> calendarioDeLiga = new HashMap<>();
 
     /**
@@ -74,7 +71,7 @@ public class CalendarServiceImpl implements CalendarService {
 
         calendario.setCalendarioDeLiga(ordenarCalendario(jornadas, fechaJornadas));
 
-        this.calendary.put(this.nextId, calendario);
+        this.calendary.put(this.nextId.getAndIncrement(), calendario);
 
         return calendario;
     }
@@ -158,8 +155,8 @@ public class CalendarServiceImpl implements CalendarService {
      * @return
      */
     @Override
-    public List<Calendario> getAllCalendary() {
-        return null;
+    public Collection<Calendario> getAllCalendary() {
+        return this.calendary.values();
     }
 
     /**
@@ -168,7 +165,8 @@ public class CalendarServiceImpl implements CalendarService {
      */
     @Override
     public Calendario getCalendaryById(Long id) {
-        return null;
+
+        return this.calendary.get(id);
     }
 
     /**
@@ -177,6 +175,10 @@ public class CalendarServiceImpl implements CalendarService {
     @Override
     public void saveCalendary(Calendario calendario) {
 
+        if(calendario != null && ! calendario.getCalendarioDeLiga().isEmpty()){
+
+            this.calendary.put(this.nextId.getAndIncrement(),calendario);
+        }
     }
 
     /**
@@ -186,6 +188,15 @@ public class CalendarServiceImpl implements CalendarService {
     @Override
     public void modifyCalendaryByCalendaryId(Long calendarioId, Calendario calendario) {
 
+        if(calendario != null && ! calendario.getCalendarioDeLiga().isEmpty()){
+            if(calendarioId == null || calendarioId ==0){
+
+                this.calendary.put(this.nextId.getAndDecrement(),calendario);
+            }
+            else {
+                this.calendary.put(calendarioId,calendario);
+            }
+        }
     }
 
     /**
@@ -194,13 +205,7 @@ public class CalendarServiceImpl implements CalendarService {
     @Override
     public void deleteCalendary(Long calendarioId) {
 
+        this.calendary.remove(calendarioId);
     }
-
-    /**
-     *
-     * @param local
-     * @param visitante
-     * @return
-     */
 
 }
