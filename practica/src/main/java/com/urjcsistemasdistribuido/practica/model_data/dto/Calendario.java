@@ -18,17 +18,15 @@ import java.util.logging.Logger;
 public class Calendario {
 
     private Logger log = (Logger) LoggerFactory.getLogger(Calendario.class);
-
+/**
     @JsonProperty("partidos")
-    private List<Partido> partidos; // Lista de partidos de la liga
+    private List<Partido> partidos; // Lista de partidos de la liga*/
 
     // key = numero de jornada, value = lista de partidos de la jornada key..
     @JsonProperty("jornada_de_liga")
     private Map<Integer, List<Partido>> calendarioDeLiga = new HashMap<>();
+/**
 
-    /**
-     * @param listaEquipos para generar jornadas de liga
-     */
     public void generarteCalendaryLeague(List<Equipo> listaEquipos){
 
         calendarioDeLiga = new HashMap<>();
@@ -70,12 +68,7 @@ public class Calendario {
         ordenarCalendario(this.calendarioDeLiga);
     }
 
-    /**
-     *
-     * @param local
-     * @param visitante
-     * @return
-     */
+
     private Partido organizarPartido(Equipo local, Equipo visitante, LocalDateTime fecha){
 
         Partido partido = new Partido();
@@ -134,5 +127,5 @@ public class Calendario {
 
             this.calendarioDeLiga.put(numJornadasVuelta,jornada);
         }
-    }
+    } **/
 }
