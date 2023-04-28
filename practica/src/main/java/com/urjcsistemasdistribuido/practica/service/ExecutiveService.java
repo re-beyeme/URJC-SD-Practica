@@ -2,12 +2,13 @@ package com.urjcsistemasdistribuido.practica.service;
 
 import com.urjcsistemasdistribuido.practica.model_data.dto.Directivo;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface ExecutiveService {
 
 
-    List<Directivo> getAllExecutive();
+    Collection<Directivo> getAllExecutive();
 
     Directivo getOneExecutiveById(Long id);
 

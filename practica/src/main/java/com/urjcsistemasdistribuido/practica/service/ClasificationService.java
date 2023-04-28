@@ -1,17 +1,22 @@
 package com.urjcsistemasdistribuido.practica.service;
 
+import com.urjcsistemasdistribuido.practica.exception.ObjectException;
 import com.urjcsistemasdistribuido.practica.model_data.dto.Clasificacion;
+import com.urjcsistemasdistribuido.practica.model_data.dto.Equipo;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface ClasificationService {
 
-    List<Clasificacion> getAllsClassification();
+    Collection<Clasificacion> getAllsClassification();
     Clasificacion getClassificationById(Long id);
 
-    Clasificacion saveClassification(Clasificacion clasificacion);
+    void saveClassification(Clasificacion clasificacion);
 
-    Clasificacion modifyClassificationById(Long ClassificationId,Clasificacion clasificacion);
+    void modifyClassificationById(Long ClassificationId,Clasificacion clasificacion);
 
     void deleteClassificationById(Long clasificationId);
+
+    Clasificacion updateClasification(List<Equipo> teams,String temporada);
 }

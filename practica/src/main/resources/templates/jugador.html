@@ -1,0 +1,33 @@
+{{>header}}
+
+<div>
+    {{#jugadorDeCampo}}
+    <h2>JugadorDeCampo "{{jugadorDeCampo.nombre}}"</h2>
+    <p>{{jugadorDeCampo.apellidos}}</p>
+    <p>{{jugadorDeCampo.edad}}</p>
+    <p>{{jugadorDeCampo.peso}}</p>
+    <p>{{jugadorDeCampo.altura}}</p>
+    <p>{{jugadorDeCampo.nombreDeportivo}}</p>
+    <p>{{jugadorDeCampo.colocacion}}</p>
+    <p>{{jugadorDeCampo.precio}}</p>
+    <p>{{jugadorDeCampo.valoracion}}</p>
+    <p>{{jugadorDeCampo.velocidad}}</p>
+    <p>{{jugadorDeCampo.potencia}}</p>
+    <p>{{jugadorDeCampo.regate}}</p>
+    <p>{{jugadorDeCampo.tiro}}</p>
+    <p>{{jugadorDeCampo.precio}}</p>
+
+    {{#admin}}
+    <p><a href="/deleteJugadorDeCampo/{{jugadorDeCampo.id}}">Remove</a></p>
+    <p><a href="/editJugadorDeCampo/{{jugadorDeCampo.id}}">Edit</a></p>
+    <br>
+    {{/admin}}
+    {{/jugadorDeCampo}}
+    {{^jugadorDeCampo}}
+    <p>jugadorDeCampo not found</p>
+    {{/jugadorDeCampo}}
+</div>
+
+<p><a href="/"/>Show all jugadorDeCampo</a></p>
+
+{{>footer}}

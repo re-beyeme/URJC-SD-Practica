@@ -1,9 +1,11 @@
 package com.urjcsistemasdistribuido.practica.service.impl;
 
+
 import com.urjcsistemasdistribuido.practica.model_data.dto.Calendario;
 import com.urjcsistemasdistribuido.practica.model_data.dto.Equipo;
 import com.urjcsistemasdistribuido.practica.model_data.dto.Partido;
 import com.urjcsistemasdistribuido.practica.service.CalendarService;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +14,11 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
+
 
 @Service
 public class CalendarServiceImpl implements CalendarService {
-
-    private Logger log = (Logger) LoggerFactory.getLogger(CalendarServiceImpl.class);
+    private Logger log = LoggerFactory.getLogger(CalendarServiceImpl.class);
     private ConcurrentMap<Long, Calendario> calendary = new ConcurrentHashMap<>();
     private AtomicLong nextId = new AtomicLong(0) ;
     private Map<Integer, List<Partido>> calendarioDeLiga = new HashMap<>();

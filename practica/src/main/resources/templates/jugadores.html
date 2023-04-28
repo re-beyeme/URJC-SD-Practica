@@ -1,0 +1,21 @@
+{{>header}}
+
+<h2>Jugadores</h2>
+<ul class="items">
+    {{#books}}
+    <li>
+        {{#logged}}
+        <a href="/jugadores/{{id}}">{{nombre}}</a>
+        {{/logged}}
+        {{^logged}}
+        {{nombre}}
+        {{/logged}}
+    </li>
+    {{/jugadores}}
+</ul>
+
+{{#admin}}
+<a href="/newJugador">New jugador</a>
+{{/admin}}
+
+{{>footer}}

@@ -57,6 +57,5 @@ public class Partido implements Comparable {
         }
         else { return compara; }
 
-
     }
 }
