@@ -1,0 +1,29 @@
+{{>header}}
+
+<div>
+
+    {{#portero}}<h2>Portero "{{portero.nombre}}"</h2>{{/portero}}
+    {{^portero}}<h2>New Portero</h2>{{/portero}}
+
+    <form action="/savePortero" method="post">
+        <div class="form-group">
+            {{#portero}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/portero}}
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" {{#portero}}value="{{nombre}}"{{/portero}} class="form-control"/>
+        </div>
+        <div class="form-group">
+            {{#portero}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/portero}}
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" {{#portero}}value="{{apellidos}}"{{/portero}} class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <input type="hidden" name="_csrf" value="{{token}}"/>
+    </form>
+
+</div>
+
+<br>
+<br>
+<p><a href="/"/>Show all jugadores</a></p>
+
+{{>footer}}

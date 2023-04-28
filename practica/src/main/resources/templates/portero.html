@@ -1,0 +1,33 @@
+{{>header}}
+
+<div>
+    {{#portero}}
+    <h2>Portero "{{portero.nombre}}"</h2>
+    <p>{{portero.apellidos}}</p>
+    <p>{{portero.edad}}</p>
+    <p>{{portero.peso}}</p>
+    <p>{{portero.altura}}</p>
+    <p>{{portero.nombreDeportivo}}</p>
+    <p>{{portero.colocacion}}</p>
+    <p>{{portero.precio}}</p>
+    <p>{{portero.valoracion}}</p>
+    <p>{{portero.velocidad}}</p>
+    <p>{{portero.potencia}}</p>
+    <p>{{portero.regate}}</p>
+    <p>{{portero.tiro}}</p>
+    <p>{{portero.precio}}</p>
+
+    {{#admin}}
+    <p><a href="/deletePortero/{{portero.id}}">Remove</a></p>
+    <p><a href="/editPortero/{{portero.id}}">Edit</a></p>
+    <br>
+    {{/admin}}
+    {{/portero}}
+    {{^portero}}
+    <p>portero not found</p>
+    {{/portero}}
+</div>
+
+<p><a href="/"/>Show all portero</a></p>
+
+{{>footer}}

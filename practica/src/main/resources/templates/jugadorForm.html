@@ -1,0 +1,28 @@
+{{>header}}
+
+<div>
+
+    {{#jugador}}<h2>Jugador "{{jugador.nombre}}"</h2>{{/judador}}
+    {{^jugador}}<h2>New Jugador</h2>{{/jugador}}
+
+    <form action="/saveJugador" method="post">
+        <div class="form-group">
+            {{#jugador}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/jugador}}
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" {{#jugador}}value="{{nombre}}"{{/jugador}} class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <textarea id="apellidos" name="apellidos" class="form-control" rows=6>{{#jugador}}{{apellidos}}{{/jugador}}</textarea><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <input type="hidden" name="_csrf" value="{{token}}"/>
+    </form>
+
+</div>
+
+<br>
+<br>
+<p><a href="/"/>Show all jugadores</a></p>
+
+{{>footer}}
