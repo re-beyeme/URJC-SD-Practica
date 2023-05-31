@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>org.example</groupId>
-    <artifactId>AplicacionWebInterfazWeb</artifactId>
+    <artifactId>BBDD</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
