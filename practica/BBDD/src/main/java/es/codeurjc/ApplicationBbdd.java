@@ -5,5 +5,4 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ApplicationBbdd {public static void main(String[] args) {
-   SpringApplication.run(ApplicationBbdd.class, args);}
-}
+   SpringApplication.run(ApplicationBbdd.class, args);}}

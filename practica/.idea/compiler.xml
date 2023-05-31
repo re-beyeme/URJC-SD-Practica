@@ -17,7 +17,6 @@
       <module name="ApiRest" options="-parameters" />
       <module name="AplicacionWebInterfazWeb" options="-parameters" />
       <module name="BBDD" options="-parameters" />
-      <module name="Bbdd" options="-parameters" />
       <module name="practica" options="" />
     </option>
   </component>
