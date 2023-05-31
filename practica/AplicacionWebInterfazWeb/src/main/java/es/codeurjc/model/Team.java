@@ -1,4 +1,4 @@
-package es.codeurjc.model.dto;
+package es.codeurjc.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

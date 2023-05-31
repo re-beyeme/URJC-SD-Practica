@@ -20,9 +20,9 @@ public final class ConstUtils {
 
     public static final double MAX_CHARACTERISTICS = 100.0;
 
-    public static final int MIN_PLAYERS = 11;
+    public static final int MIN_PLAYERS = 4;
 
-    public static final int MAX_PLAYERS = 11;
+    public static final int MAX_PLAYERS = 7;
 
     public static final double MIN_VALUE = 0.0;
 

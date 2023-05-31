@@ -1,7 +1,6 @@
-package es.codeurjc.model.dto;
+package es.codeurjc.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import es.codeurjc.utilsConst.ConstUtils;
 import es.codeurjc.utilsConst.Demarcation;
 import lombok.*;
 
